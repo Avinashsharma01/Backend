@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Avinash</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 300px;
+            height: auto;
+            background-color: rgb(96, 92, 92);
+            padding: 40px 10px;
+        }
+        input{
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .head{
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        #homeBTN{
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 5px;
+            background-color: rgb(32, 32, 133);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        #loginBTN{
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 5px;
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .btns{
+            display:flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/login" method="post">
+            <h1 class="head">Login Please</h1>
+            <div class="email">
+                <input type="text" name="email" placeholder="Email">
+            </div>
+            <div class="password">
+                <input type="text" name="password" placeholder="Password">
+            </div>
+            <div class="create">
+                <input type="submit" value="Login">
+            </div>
+            <div class="btns">
+                <a  id="homeBTN"  href="/register">Create account</a>
+                <a id="loginBTN" href="/">Home</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

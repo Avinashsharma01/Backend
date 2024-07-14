@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prfile</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family:'Times New Roman', Times, serif;
+            }
+
+            body {
+                width: 100vw;
+                min-height: 100vh;
+                height: auto;
+                display: flex;
+                
+            }
+            textarea {
+                width: 95vw;               
+                display: block;
+                height: 150px;
+            }
+            input,
+         
+            .conatiner {
+                margin: 20px 10px;
+            }
+            
+            #logout{
+                text-decoration: none;
+                background-color: red;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 50px;
+            }
+
+            #SwitchUser{
+                text-decoration: none;
+                background-color: green;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 50px;
+            }
+            .submit{
+                background-color: blue;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 50px;
+                margin-top: 10px;
+            }
+            .posts{
+                margin-top: 20px;
+                padding: 50px;
+                
+            }
+           .post{
+            width: 335px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid gray;
+            
+            padding: 10px;
+           }
+            .postsContainer{
+                height: auto;
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            #like, #edit{
+                text-decoration: none;
+                text-decoration: none;
+                background-color: white;
+                color: black;
+                padding: 5px 20px;
+                border-radius: 50px;
+                border: 1px solid gray;
+            }
+            .btns{
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-around;
+            }
+            #textaria{
+                padding: 10px;
+            }
+            #time{
+                font-size: 15px;
+                margin-top: 10px;
+                color: rgb(78, 75, 75);
+            }
+            #delete{
+                text-decoration: none;
+                text-decoration: none;
+                background-color: red;
+                color: white;
+                padding: 5px 20px;
+                border-radius: 50px;
+                border: 1px solid gray;
+            }
+            .small{
+                display: inline-block ;
+                margin-top: 10px;
+                color: rgb(31, 171, 31);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="conatiner">
+            <div class="logout">
+                <a  id="logout" href="/logout">Logout</a>
+                <a  id="SwitchUser" href="/login">Switch User</a>
+            </div>
+            <h1>Hello, <%= user.name%></h1>
+            <h4>You can create new post here.</h4>
+            <div class="text">
+                <form action="/post" method="post">
+                    <textarea
+                    placeholder="Write here your post"
+                    name="postContent"
+                    id="textaria"
+                >  </textarea>
+                <input class="submit" type="submit" value="Create New Post" />
+                </form>
+                <div class="posts">
+                    <h1>Your Posts</h1>
+                    <div class="postsContainer">
+                        <% user.posts.reverse().forEach((post)=>{%>
+                            <div class="post">
+                                <p style="color: blue;" >@ <%= user.username %></p>
+                                <p> <%= post.postContent %> </p>
+                                <p id="time" >  <%= post.date %> </p>
+                                <small class="small"> (<%= post.likes.length %>) likes</small>
+                                <div class="btns">
+                                    <a id="like" href="/like/<%= post._id %>">
+                                        <%= post.likes.indexOf(user._id)=== -1 ?  "🩶":"❤️" %>
+                                    </a>
+                                    <a id="edit" href="/edit/<%= post._id %>">Edit</a>
+                                    <a id="delete" href="/delete/<%= post._id %>">Delete</a>
+                                </div>
+                            </div>
+                        <%}) %>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
