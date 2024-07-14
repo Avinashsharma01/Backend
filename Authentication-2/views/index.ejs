@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container w-full h-screen bg-slate-700 flex justify-center align-center">
+        <form method="post" action="/create">
+            <h1 class="text-white  text-lg text-center bg-gray-500">Plaese Register here</h1>
+            <div class="name">
+                <input class="my-3 p-4"  type="text" placeholder="Enter your name" name="name"  >
+            </div>
+            <div class="email">
+                <input class="my-3 p-4"  type="email" placeholder="Enter your email" name="email"  >
+            </div>
+            <div class="age">
+                <input class="my-3 p-4"  type="number" placeholder="Enter your age" name="age"  >
+            </div>
+            <div class="pass">
+                <input class="my-3 p-4"  type="password" placeholder="Enter your password" name="password"  >
+            </div>
+            <div class="submit flex justify-center ">
+                <input class="bg-blue-500 text-white p-3 " type="submit" value="Create User">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
