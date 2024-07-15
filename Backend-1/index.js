@@ -1,12 +1,10 @@
-console.log("Avinash Sharma")
-console.log('i am learning backend right now.')
-require('dotenv').config()
+const env= require('dotenv').config()
 const express=require('express')
 const app=express()
-const port=4000
+const port=3000
 
 app.get("/",(req, res)=>{
-    res.send("Sab thi hai")
+    res.send("Sab thik hai")
 })
 
 app.get("/avinash",(req, res)=>{
@@ -21,6 +19,6 @@ app.get('/youtube',(req,res)=>{
     res.send('hello Youtube ')
 })
 
-app.listen(process.env.port,()=>{
-    console.log(`Listing on port no:-  ${port}`)
+app.listen(process.env.PORT,()=>{
+    console.log(`Listing on port no:-  ${process.env.PORT}`)
 })
