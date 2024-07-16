@@ -3,6 +3,8 @@ const app = express()
 // const cors= require("cors")
 // app.use(cors())
 
+
+ 
 let hello = (req, res) => {
     res.send("server is live")
 }
