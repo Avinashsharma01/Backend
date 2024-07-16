@@ -4,7 +4,7 @@ const app = express()
 // app.use(cors())
 
 
- 
+app.use(express.static("dist"))
 let hello = (req, res) => {
     res.send("server is live")
 }
