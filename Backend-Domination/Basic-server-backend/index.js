@@ -1,10 +1,10 @@
 const express = require("express")
 const app = express()
-// const cors= require("cors")
-// app.use(cors())
+const cors= require("cors")
+app.use(cors())
 
 
-app.use(express.static("dist"))
+// app.use(express.static("dist"))
 let hello = (req, res) => {
     res.send("server is live")
 }
@@ -47,10 +47,14 @@ app.get("/api/joke", (req, res) => {
             title: 'Hello-5',
             content: 'Hello i am joke-5'
         },
+        {
+            id: 6,
+            title: 'Hello-6',
+            content: 'Vishal Gandu Betichod'
+        },
     ]
     res.json(joke)
 })
-
 
 
 app.listen(3000)
