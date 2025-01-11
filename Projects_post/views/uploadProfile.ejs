@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Upload profile pic</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .main{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .con{
+                background-color: gray;
+                padding: 75px;
+                border-radius: 20px;
+            }
+            h1{
+                margin-bottom: 30px;
+            }
+            .profile{
+                background-color: rgb(30, 30, 130);
+                padding: 10px 20px;
+                color: white;
+                border-radius: 10px;
+                text-decoration: none;
+                position: relative;
+                top: 50px;
+                left: 130px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="con">
+                <h1>Upload your profile here </h1>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="image" id="" />
+                    <input type="submit" value="Upload File" />
+                </form>
+                <div class="links">
+                    <a class="profile" href="/profile">Profile</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
